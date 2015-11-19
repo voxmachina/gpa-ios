@@ -5,6 +5,8 @@ use_frameworks!
 
 target 'GPA' do
   pod 'Google/SignIn'
+  pod 'SwiftHTTP', '~> 1.0.0'
+  pod 'JSONJoy-Swift', '~> 1.0.0'
 end
 
 target 'GPATests' do

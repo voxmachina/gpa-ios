@@ -24,9 +24,13 @@ PODS:
   - GoogleSymbolUtilities (1.0.3)
   - GoogleUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0.0)
+  - JSONJoy-Swift (1.0.0)
+  - SwiftHTTP (1.0.2)
 
 DEPENDENCIES:
   - Google/SignIn
+  - JSONJoy-Swift (~> 1.0.0)
+  - SwiftHTTP (~> 1.0.0)
 
 SPEC CHECKSUMS:
   Google: fd33b5fa40fa3aaee5176de49c873a74e3d11dce
@@ -37,5 +41,7 @@ SPEC CHECKSUMS:
   GoogleSignIn: 79929b51e6299c69f1197bbd9c7a1367d523ecd8
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
+  JSONJoy-Swift: 3e8129c282470614da69759208e9c923732f6cb4
+  SwiftHTTP: 6d8ca031a9ce613a01e8f18b497503887b0b50c0
 
 COCOAPODS: 0.39.0
