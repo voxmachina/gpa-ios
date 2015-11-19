@@ -27,7 +27,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/calendar")
         
         // Uncomment to automatically sign in the user.
-//        GIDSignIn.sharedInstance().signInSilently()
+        GIDSignIn.sharedInstance().signInSilently()
         
         // TODO(developer) Configure the sign-in button look/feel
         // ...
@@ -70,10 +70,18 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                         return
                     }
                     let json = JSON(data: response.data)
-                    if let description = json["items"][0]["description"].string {
-                        self.debugLabel.text = description
-                    } else {
-                        print(json["items"][0]["description"].error) // "Dictionary["address"] does not exist"
+                    print("GOT DATA FROM SERVER")
+                    
+                    //If json is .Array
+                    //The `index` is 0..<json.count's string value
+                    for (_,subJson):(String, JSON) in json["items"] {
+                        print(subJson)
+                        if let description = subJson["description"].string {
+                            print(description)
+                            self.debugLabel.text =  description
+                        } else {
+                            print(json["items"][0]["description"].error) // "Dictionary["address"] does not exist"
+                        }
                     }
                 }
             } catch let error {
