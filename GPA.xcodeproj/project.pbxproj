@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B90CEC34EEB52BBA92F3315 /* libPods-GPA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F823531978BA28891DAEA6D /* libPods-GPA.a */; };
+		6841BCFCC64C0C0CFC646FF7 /* Pods_GPA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C633FEBD4BA55E098C7CF4CA /* Pods_GPA.framework */; };
 		EB6258251BFE59F500347D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6258241BFE59F500347D07 /* GoogleService-Info.plist */; };
 		EB6258261BFE5A4000347D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6258241BFE59F500347D07 /* GoogleService-Info.plist */; };
 		EB6258271BFE5A4100347D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6258241BFE59F500347D07 /* GoogleService-Info.plist */; };
@@ -38,9 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F823531978BA28891DAEA6D /* libPods-GPA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GPA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		499115EA121465CA5F07E923 /* Pods-GPA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPA/Pods-GPA.release.xcconfig"; sourceTree = "<group>"; };
 		966DA6039BC46A452CE6E830 /* Pods-GPA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPA/Pods-GPA.debug.xcconfig"; sourceTree = "<group>"; };
+		C633FEBD4BA55E098C7CF4CA /* Pods_GPA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6258241BFE59F500347D07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBC302D11BFC921C00CA7C2E /* GPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC302D41BFC921C00CA7C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 		EBC302F01BFC921D00CA7C2E /* GPAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC302F41BFC921D00CA7C2E /* GPAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPAUITests.swift; sourceTree = "<group>"; };
 		EBC302F61BFC921D00CA7C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBDECD671BFE63BE008D34C5 /* GPA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GPA-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B90CEC34EEB52BBA92F3315 /* libPods-GPA.a in Frameworks */,
+				6841BCFCC64C0C0CFC646FF7 /* Pods_GPA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +96,7 @@
 		94330D4113E01A28138B8CC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2F823531978BA28891DAEA6D /* libPods-GPA.a */,
+				C633FEBD4BA55E098C7CF4CA /* Pods_GPA.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +128,7 @@
 			children = (
 				EBC302D41BFC921C00CA7C2E /* AppDelegate.swift */,
 				EBC302D61BFC921C00CA7C2E /* ViewController.swift */,
+				EBDECD671BFE63BE008D34C5 /* GPA-Bridging-Header.h */,
 				EBC302D81BFC921D00CA7C2E /* Main.storyboard */,
 				EBC302DB1BFC921D00CA7C2E /* Assets.xcassets */,
 				EBC302DD1BFC921D00CA7C2E /* LaunchScreen.storyboard */,
@@ -488,6 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.okdoki.GPA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GPA/GPA-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -500,6 +503,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.okdoki.GPA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GPA/GPA-Bridging-Header.h";
 			};
 			name = Release;
 		};
