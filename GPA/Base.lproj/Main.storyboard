@@ -17,22 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EA8-Dr-O5d" customClass="GIDSignInButton">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-5D-p9j">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="okdoki" id="uju-YK-66w">
+                                        <barButtonItem key="rightBarButtonItem" title="logout" id="Wsc-Dy-mir">
+                                            <connections>
+                                                <action selector="signOut:" destination="BYZ-38-t0r" id="F8Q-G6-bZr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQX-D8-vUc" customClass="GIDSignInButton">
+                                <rect key="frame" x="40" y="276" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading calendar description..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28g-3t-7i5">
+                                <rect key="frame" x="42" y="85" width="236" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="googleSignInButton" destination="EA8-Dr-O5d" id="GKi-gP-IwM"/>
+                        <outlet property="debugLabel" destination="28g-3t-7i5" id="epJ-g4-hC5"/>
+                        <outlet property="googleSignInButton" destination="OQX-D8-vUc" id="YYR-K1-TA1"/>
+                        <outlet property="googleSignOutButton" destination="Wsc-Dy-mir" id="g13-Ac-Oqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="546" y="248"/>
         </scene>
     </scenes>
 </document>

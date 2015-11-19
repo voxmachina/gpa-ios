@@ -8,17 +8,15 @@
 
 import UIKit
 import SwiftHTTP
+import SwiftyJSON
 
 class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
-    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+    @IBOutlet var googleSignInButton: GIDSignInButton!
     
-    struct Response: JSONJoy {
-        let status: String?
-        init(_ decoder: JSONDecoder) {
-            status = decoder["status"].string
-        }
-    }
+    @IBOutlet var debugLabel: UILabel!
+    
+    @IBOutlet var googleSignOutButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +27,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/calendar")
         
         // Uncomment to automatically sign in the user.
-        GIDSignIn.sharedInstance().signInSilently()
+//        GIDSignIn.sharedInstance().signInSilently()
         
         // TODO(developer) Configure the sign-in button look/feel
         // ...
@@ -42,6 +40,11 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signOut(sender: AnyObject) {
+        GIDSignIn.sharedInstance().signOut()
+        toggleAuthUI()
+    }
+    
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
         if let _ = error {
             print(error)
@@ -52,28 +55,29 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     }
     
     
-    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user: GIDGoogleUser!, withError error: NSError!) {
-        
-    }
-    
-    
     func getCalendars() {
         
         if let googleAuthToken = GIDSignIn.sharedInstance().currentUser?.authentication.accessToken {
             let urlString = "https://www.googleapis.com/calendar/v3/users/me/calendarList?access_token=\(googleAuthToken)"
             
+            print(urlString)
+            
             do {
                 let opt = try HTTP.GET(urlString)
                 opt.start { response in
-                    if let err = response.error {
-                        print("error: \(err.localizedDescription)")
-                        return //also notify app of failure as needed
+                    if let error = response.error {
+                        print("got an error: \(error)")
+                        return
                     }
-                    print("opt finished: \(response.description)")
-                    print("data is: \(response.data)") //  access the response of the data with response.data
+                    let json = JSON(data: response.data)
+                    if let description = json["items"][0]["description"].string {
+                        self.debugLabel.text = description
+                    } else {
+                        print(json["items"][0]["description"].error) // "Dictionary["address"] does not exist"
+                    }
                 }
             } catch let error {
-                print("got an error creating the request: \(error)")
+                print("got an error: \(error)")
             }
             
         } else {
@@ -87,6 +91,8 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
             // Signed in
             googleSignInButton.hidden = true
+            debugLabel.hidden = false
+            googleSignOutButton.enabled = true
             getCalendars()
             print("LOGGED IN")
 //            signOutButton.hidden = false
@@ -94,6 +100,8 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         } else {
             print("NOT LOGGED IN")
             googleSignInButton.hidden = false
+            debugLabel.hidden = true
+            googleSignOutButton.enabled = false
 //            signOutButton.hidden = true
 //            disconnectButton.hidden = true
 //            statusText.text = "Google Sign in\niOS Demo"
