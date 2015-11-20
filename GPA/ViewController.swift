@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
-    @IBOutlet var googleSignInButton: GIDSignInButton!
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!
     
     @IBOutlet var debugLabel: UILabel!
     

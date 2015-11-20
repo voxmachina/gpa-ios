@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-5D-p9j">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-5D-p9j">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <animations/>
                                 <items>
@@ -30,21 +31,36 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQX-D8-vUc" customClass="GIDSignInButton">
-                                <rect key="frame" x="40" y="276" width="240" height="128"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.81145015269999998" green="0.17472888449999999" blue="0.051104974640000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading calendar description..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28g-3t-7i5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading calendar description..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28g-3t-7i5">
                                 <rect key="frame" x="42" y="85" width="236" height="21"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QpS-lQ-x8p"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQX-D8-vUc" customClass="GIDSignInButton">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.81145015269999998" green="0.17472888449999999" blue="0.051104974640000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OQX-D8-vUc" secondAttribute="bottom" constant="220" id="0Si-FJ-ClK"/>
+                            <constraint firstItem="dCy-5D-p9j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0qJ-XG-mwX"/>
+                            <constraint firstItem="28g-3t-7i5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="3gm-9E-nCw"/>
+                            <constraint firstItem="28g-3t-7i5" firstAttribute="centerX" secondItem="dCy-5D-p9j" secondAttribute="centerX" id="BUD-sa-HLF"/>
+                            <constraint firstItem="OQX-D8-vUc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="Dad-MW-V6t"/>
+                            <constraint firstItem="dCy-5D-p9j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KHk-Vh-ReP"/>
+                            <constraint firstAttribute="trailing" secondItem="dCy-5D-p9j" secondAttribute="trailing" id="MTg-Bz-Uxb"/>
+                            <constraint firstItem="OQX-D8-vUc" firstAttribute="centerX" secondItem="28g-3t-7i5" secondAttribute="centerX" id="OFL-Pm-B9H"/>
+                            <constraint firstItem="28g-3t-7i5" firstAttribute="top" secondItem="dCy-5D-p9j" secondAttribute="bottom" constant="21" id="cK6-29-Jf6"/>
+                            <constraint firstItem="OQX-D8-vUc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hdi-px-JIy"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -55,7 +71,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="546" y="248"/>
+            <point key="canvasLocation" x="383" y="263"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CcE-Mu-QDu">
+            <objects>
+                <viewController id="nsj-s8-kee" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ymu-H3-wse"/>
+                        <viewControllerLayoutGuide type="bottom" id="5dL-VP-gAn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wYu-hl-Kdm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDR-qP-Nuh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="263"/>
         </scene>
     </scenes>
 </document>
