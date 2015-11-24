@@ -108,8 +108,25 @@
                     <view key="view" contentMode="scaleToFill" id="NTc-bP-eP5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c0-Ox-E07">
+                                <rect key="frame" x="101" y="273" width="119" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9L5-jp-eHW"/>
+                                    <constraint firstAttribute="width" constant="119" id="yNe-uA-2Hr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4c0-Ox-E07" firstAttribute="centerX" secondItem="NTc-bP-eP5" secondAttribute="centerX" id="jT3-pN-jpA"/>
+                            <constraint firstItem="4c0-Ox-E07" firstAttribute="centerY" secondItem="NTc-bP-eP5" secondAttribute="centerY" id="seO-KS-FRc"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
@@ -128,8 +145,25 @@
                     <view key="view" contentMode="scaleToFill" id="9QU-4O-RTB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1V-To-UQP">
+                                <rect key="frame" x="94" y="273" width="133" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="QWf-XO-MPv"/>
+                                    <constraint firstAttribute="height" constant="21" id="zAc-X3-brW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L1V-To-UQP" firstAttribute="centerY" secondItem="9QU-4O-RTB" secondAttribute="centerY" id="VSA-Yp-khT"/>
+                            <constraint firstItem="L1V-To-UQP" firstAttribute="centerX" secondItem="9QU-4O-RTB" secondAttribute="centerX" id="XMs-WC-vXg"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
