@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		EB1298281C03C06000CAB76E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1298271C03C06000CAB76E /* SettingsTableViewController.swift */; };
 		EB12982A1C03C0B600CAB76E /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1298291C03C0B600CAB76E /* HomeCollectionViewController.swift */; };
+		EB89D2801C04FA960005265E /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D27F1C04FA960005265E /* CustomNavigationBar.swift */; };
+		EB89D2821C04FD830005265E /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D2811C04FD830005265E /* AccountDetailViewController.swift */; };
+		EBB42F841C03C51D0020D334 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42F831C03C51D0020D334 /* Settings.swift */; };
+		EBB42F8C1C03D7F20020D334 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42F8B1C03D7F20020D334 /* AddAccountViewController.swift */; };
 		EBC302D51BFC921C00CA7C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC302D41BFC921C00CA7C2E /* AppDelegate.swift */; };
 		EBC302DA1BFC921D00CA7C2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC302D81BFC921D00CA7C2E /* Main.storyboard */; };
 		EBC302DC1BFC921D00CA7C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC302DB1BFC921D00CA7C2E /* Assets.xcassets */; };
@@ -37,6 +41,10 @@
 /* Begin PBXFileReference section */
 		EB1298271C03C06000CAB76E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		EB1298291C03C0B600CAB76E /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		EB89D27F1C04FA960005265E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		EB89D2811C04FD830005265E /* AccountDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
+		EBB42F831C03C51D0020D334 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		EBB42F8B1C03D7F20020D334 /* AddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		EBC302D11BFC921C00CA7C2E /* GPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC302D41BFC921C00CA7C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBC302D91BFC921D00CA7C2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,8 +109,12 @@
 			children = (
 				EBC302D41BFC921C00CA7C2E /* AppDelegate.swift */,
 				EBC302D81BFC921D00CA7C2E /* Main.storyboard */,
+				EB89D2811C04FD830005265E /* AccountDetailViewController.swift */,
+				EBB42F8B1C03D7F20020D334 /* AddAccountViewController.swift */,
 				EB1298291C03C0B600CAB76E /* HomeCollectionViewController.swift */,
+				EB89D27F1C04FA960005265E /* CustomNavigationBar.swift */,
 				EB1298271C03C06000CAB76E /* SettingsTableViewController.swift */,
+				EBB42F831C03C51D0020D334 /* Settings.swift */,
 				EBC302DB1BFC921D00CA7C2E /* Assets.xcassets */,
 				EBC302DD1BFC921D00CA7C2E /* LaunchScreen.storyboard */,
 				EBC302E01BFC921D00CA7C2E /* Info.plist */,
@@ -262,8 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB89D2821C04FD830005265E /* AccountDetailViewController.swift in Sources */,
+				EB89D2801C04FA960005265E /* CustomNavigationBar.swift in Sources */,
 				EB12982A1C03C0B600CAB76E /* HomeCollectionViewController.swift in Sources */,
 				EB1298281C03C06000CAB76E /* SettingsTableViewController.swift in Sources */,
+				EBB42F8C1C03D7F20020D334 /* AddAccountViewController.swift in Sources */,
+				EBB42F841C03C51D0020D334 /* Settings.swift in Sources */,
 				EBC302D51BFC921C00CA7C2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

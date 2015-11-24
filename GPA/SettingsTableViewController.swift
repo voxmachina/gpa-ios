@@ -9,6 +9,8 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    
+    var settings: [Setting] = SettingsData().getSettingsFromData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,7 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.title = "Settings"
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +31,36 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return settings.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return settings[section].items.count
     }
-
-    /*
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return settings[section].name
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("settingsCell", forIndexPath: indexPath)
+        
+        cell.textLabel?.text = settings[indexPath.section].items[indexPath.row].name
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let sectionItems = settings[indexPath.section].items
+        
+        if (indexPath.row == sectionItems.count - 1 && sectionItems[indexPath.row].hasLink) {
+            performSegueWithIdentifier("segueToAddAccount", sender: nil)
+        } else {
+            performSegueWithIdentifier("segueToAccountDetails", sender: nil)
+        }
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +97,13 @@ class SettingsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        print(segue.identifier)
+//    }
+
 
 }
