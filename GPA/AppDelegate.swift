@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AeroGearOAuth2
 
 let themeColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
 
@@ -18,7 +19,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window?.tintColor = themeColor
+        prepareDefaultSettings()
         return true
+    }
+    
+    private func prepareDefaultSettings() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let clear = userDefaults.boolForKey("clearShootKeychain")
+        let kcDebug = KeychainWrap()
+        print(kcDebug.read("dummy", tokenType: TokenType.AccessToken))
+        
+//        print(NSUserDefaults.standardUserDefaults().dictionaryRepresentation())
+        
+        if (clear) {
+            print("clearing Keychain")
+            let kc = KeychainWrap()
+            kc.resetKeychain()
+        }
+        // default values
+        userDefaults.registerDefaults(["key_url" : ""])
+        
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+            let notification = NSNotification(name: AGAppLaunchedWithURLNotification, object:nil, userInfo:[UIApplicationLaunchOptionsURLKey:url])
+            NSNotificationCenter.defaultCenter().postNotification(notification)
+            return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -37,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        NSNotificationCenter.defaultCenter().postNotificationName(AGAppDidBecomeActiveNotification, object:nil)
     }
 
     func applicationWillTerminate(application: UIApplication) {
