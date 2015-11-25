@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFC3587DE87A5E4ED42C2B95 /* Pods_GPA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8E785A42F42621F65E3388 /* Pods_GPA.framework */; };
 		EB1298281C03C06000CAB76E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1298271C03C06000CAB76E /* SettingsTableViewController.swift */; };
 		EB12982A1C03C0B600CAB76E /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1298291C03C0B600CAB76E /* HomeCollectionViewController.swift */; };
 		EB89D2801C04FA960005265E /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D27F1C04FA960005265E /* CustomNavigationBar.swift */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3271AAA41A6997D83178A230 /* Pods-GPA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPA/Pods-GPA.release.xcconfig"; sourceTree = "<group>"; };
+		334EADE5E7FE8FE69771CDEE /* Pods-GPA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPA/Pods-GPA.debug.xcconfig"; sourceTree = "<group>"; };
 		EB1298271C03C06000CAB76E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		EB1298291C03C0B600CAB76E /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		EB89D27F1C04FA960005265E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		EBC302F01BFC921D00CA7C2E /* GPAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC302F41BFC921D00CA7C2E /* GPAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPAUITests.swift; sourceTree = "<group>"; };
 		EBC302F61BFC921D00CA7C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF8E785A42F42621F65E3388 /* Pods_GPA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC3587DE87A5E4ED42C2B95 /* Pods_GPA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +89,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12A19AFB7BB8E5A48BE2820C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				334EADE5E7FE8FE69771CDEE /* Pods-GPA.debug.xcconfig */,
+				3271AAA41A6997D83178A230 /* Pods-GPA.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F4ADBD4C44AF690B207C369 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF8E785A42F42621F65E3388 /* Pods_GPA.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EBC302C81BFC921C00CA7C2E = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +113,8 @@
 				EBC302E81BFC921D00CA7C2E /* GPATests */,
 				EBC302F31BFC921D00CA7C2E /* GPAUITests */,
 				EBC302D21BFC921C00CA7C2E /* Products */,
+				12A19AFB7BB8E5A48BE2820C /* Pods */,
+				3F4ADBD4C44AF690B207C369 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC302F91BFC921D00CA7C2E /* Build configuration list for PBXNativeTarget "GPA" */;
 			buildPhases = (
+				E0D43F84F247B4A255593BA8 /* Check Pods Manifest.lock */,
 				EBC302CD1BFC921C00CA7C2E /* Sources */,
 				EBC302CE1BFC921C00CA7C2E /* Frameworks */,
 				EBC302CF1BFC921C00CA7C2E /* Resources */,
+				00332409A3FD6DA14235FFCF /* Embed Pods Frameworks */,
+				E99831557E2D4667A13556A3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +295,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00332409A3FD6DA14235FFCF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GPA/Pods-GPA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0D43F84F247B4A255593BA8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E99831557E2D4667A13556A3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GPA/Pods-GPA-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBC302CD1BFC921C00CA7C2E /* Sources */ = {
@@ -418,6 +493,7 @@
 		};
 		EBC302FA1BFC921D00CA7C2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 334EADE5E7FE8FE69771CDEE /* Pods-GPA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GPA/Info.plist;
@@ -429,6 +505,7 @@
 		};
 		EBC302FB1BFC921D00CA7C2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3271AAA41A6997D83178A230 /* Pods-GPA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GPA/Info.plist;
